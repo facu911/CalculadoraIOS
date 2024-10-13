@@ -1,4 +1,5 @@
 /* Numeros */
+const cero = document.querySelector(".cero")
 const uno = document.querySelector(".uno");
 const dos = document.querySelector(".dos");
 const tres = document.querySelector(".tres");
@@ -8,105 +9,90 @@ const seis = document.querySelector(".seis");
 const siete = document.querySelector(".siete");
 const ocho = document.querySelector(".ocho");
 const nueve = document.querySelector(".nueve");
+const coma = document.querySelector(".coma");
 /* Operadores */
 const multiplicar=document.querySelector(".multiplicar");
 const dividir=document.querySelector(".dividir");
 const restar=document.querySelector(".restar");
 const sumar=document.querySelector(".sumar");
-/* Procesos */
-let parametro1="";
-let parametro2="";
-let operador ="";
-/* Validacion si escribimos el parametro 1 o 2 */
-if (operador===""){
-    uno.addEventListener("click",()=>{
-        parametro1+="1";
-        console.log(parametro1)
-    })
-    dos.addEventListener("click",()=>{
-        parametro1+="2";
-        console.log(parametro1)
-    })
-    tres.addEventListener("click",()=>{
-        parametro1+="3";
-        console.log(parametro1)
-    })
-    cuatro.addEventListener("click",()=>{
-        parametro1+="4";
-        console.log(parametro1)
-    })
-    cinco.addEventListener("click",()=>{
-        parametro1+="5";
-        console.log(parametro1)
-    })
-    seis.addEventListener("click",()=>{
-        parametro1+="6";
-        console.log(parametro1)
-    })
-    siete.addEventListener("click",()=>{
-        parametro1+="7";
-        console.log(parametro1)
-    })
-    ocho.addEventListener("click",()=>{
-        parametro1+="8";
-        console.log(parametro1)
-    })
-    nueve.addEventListener("click",()=>{
-        parametro1+="9";
-        console.log(parametro1)
-    })
-}else{
-    uno.addEventListener("click",()=>{
-        parametro2+="1";
-        console.log(parametro2)
-    })
-    dos.addEventListener("click",()=>{
-        parametro2+="2";
-        console.log(parametro2)
-    })
-    tres.addEventListener("click",()=>{
-        parametro2+="3";
-        console.log(parametro2)
-    })
-    cuatro.addEventListener("click",()=>{
-        parametro2+="4";
-        console.log(parametro2)
-    })
-    cinco.addEventListener("click",()=>{
-        parametro2+="5";
-        console.log(parametro2)
-    })
-    seis.addEventListener("click",()=>{
-        parametro2+="6";
-        console.log(parametro2)
-    })
-    siete.addEventListener("click",()=>{
-        parametro2+="7";
-        console.log(parametro2)
-    })
-    ocho.addEventListener("click",()=>{
-        parametro2+="8";
-        console.log(parametro2)
-    })
-    nueve.addEventListener("click",()=>{
-        parametro2+="9";
-        console.log(parametro2)
-    })
-}
+const igual=document.querySelector(".igual");
+const reiniciar=document.querySelector(".AC");
+/* Pantalla */
+const pantalla=document.querySelector(".resultado")
+/* operacion por pantalla */
+let operacion=""
 
-multiplicar.addEventListener("click",()=>{
-    operador="multiplicar"
-    console.log(operador)
+/* Introducimos los numeros por panatalla */
+cero.addEventListener("click",()=>{
+    operacion+="0";
+    pantalla.innerHTML=operacion;
 })
 
-/* Funcion que transforma el parametro 1 en numero */
-const transformar1 =()=>{
-    parametro1=Number(parametro1);
-    return parametro1;
-}
-/* Funcion que transforma el parametro 2 en numero */
-const transformar2 =()=>{
-    parametro2=Number(parametro2);
-    return parametro2;
-}
+uno.addEventListener("click",()=>{
+    operacion+="1";
+    pantalla.innerHTML=operacion;
+})
+dos.addEventListener("click",()=>{
+    operacion+="2";
+    pantalla.innerHTML=operacion;
+})
+tres.addEventListener("click",()=>{
+    operacion+="3";
+    pantalla.innerHTML=operacion;
+})
+cuatro.addEventListener("click",()=>{
+    operacion+="4";
+    pantalla.innerHTML=operacion;
+})
+cinco.addEventListener("click",()=>{
+    operacion+="5";
+    pantalla.innerHTML=operacion;
+})
+seis.addEventListener("click",()=>{
+    operacion+="6";
+    pantalla.innerHTML=operacion;
+})
+siete.addEventListener("click",()=>{
+    operacion+="7";
+    pantalla.innerHTML=operacion;
+})
+ocho.addEventListener("click",()=>{
+    operacion+="8";
+    pantalla.innerHTML=operacion;
+})
+nueve.addEventListener("click",()=>{
+    operacion+="9";
+    pantalla.innerHTML=operacion;
+})
+coma.addEventListener("click",()=>{
+    operacion+=",";
+    pantalla.innerHTML=operacion;
+})
 
+/* Introducimos el operador por pantalla */
+multiplicar.addEventListener("click",()=>{
+    operacion+="*";
+    pantalla.innerHTML=operacion;
+})
+dividir.addEventListener("click",()=>{
+    operacion+="/";
+    pantalla.innerHTML=operacion;
+})
+restar.addEventListener("click",()=>{
+    operacion+="-";
+    pantalla.innerHTML=operacion;
+})
+sumar.addEventListener("click",()=>{
+    operacion+="+";
+    pantalla.innerHTML=operacion;
+})
+/* Al apretar igual damos el resutado de la operacion */
+igual.addEventListener("click",()=>{
+    pantalla.innerHTML=Number(eval(operacion))
+})
+/* Boton para reiniciar */
+reiniciar.addEventListener("click",()=>{
+    operacion="";
+    pantalla.innerHTML=operacion;
+    
+})

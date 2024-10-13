@@ -5,6 +5,7 @@ body{
     display: flex;
     align-content: center;
     justify-content: center;
+    user-select: none;
 }
 /* Acomodamos con css grid las columnas y filas */
 .container{
@@ -32,6 +33,16 @@ body{
 .tamaño:hover{
     cursor: pointer;
 }
+.color-grey .tamaño:active{
+    background-color: rgba(255, 255, 255, 0.300);
+}
+.color-yellow .tamaño:active{
+    color: yellow;
+    background-color: rgba(255, 255, 255, 0.300);
+}
+.color-grey-black .tamaño:active{
+    background-color: rgba(255, 255, 255, 0.300);
+}
 /* Acomodamos con css grid las filas y columnas */
 .color-grey{
     display: flex;
@@ -44,6 +55,7 @@ body{
 .color-grey .tamaño{
     background-color: grey;
     color: black;
+    transition: 0.3s ease-out;
 }
 .color-grey-black{
     display: grid;
@@ -63,6 +75,7 @@ body{
 }
 .color-grey-black .tamaño{
     background-color: rgb(51, 50, 50);
+    transition: 0.3s ease-out;
 }
 .color-yellow{
     display: flex;
@@ -73,8 +86,16 @@ body{
 }
 .color-yellow .tamaño{
     background-color: rgba(240, 138, 43, 0.925);
+    transition: 0.3s ease-out;
 }
 .resultado{
-    grid-column: 1/2;
-    grid-row: 1/4;
+    grid-column: 1/3;
+    grid-row: 1/2;
+    color: white;
+    font-size: 80px;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    margin-right: 55px;
+    overflow-wrap: break-word;
 }
